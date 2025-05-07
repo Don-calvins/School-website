@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaramogi Oginga Odinga University of Science and Technology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .department-card:hover {
+            background-color: #f8f9fa;
+        }
+        .marquee {
+            animation: marquee 20s linear infinite;
+            white-space: nowrap;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Top Announcement Bar -->
+    <div class="bg-blue-800 text-white py-2 px-4">
+        <div class="container mx-auto overflow-hidden">
+            <div class="marquee">
+                <span class="font-bold mr-4"><i class="fas fa-bullhorn mr-2"></i>ANNOUNCEMENT:</span>
+                <span class="mr-4">Applications for September 2025 intake now open!</span>
+                <span class="mr-4">Research Week scheduled for 15th-19th November</span>
+                <span class="mr-4">Campus closed on 28th April for Long Holiday</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <img src="https://via.placeholder.com/60" alt="JOOUST Logo" class="h-16 mr-4">
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-blue-900">JARAMOGI OGINGA ODINGA UNIVERSITY</h1>
+                    <p class="text-sm text-gray-600">of Science and Technology</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-blue-800 hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-blue-500 hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-red-600 hover:text-red-500"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="text-gray-800 hover:text-gray-600"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="hidden md:flex space-x-1">
+                    <a href="#home" class="px-4 py-3 hover:bg-blue-800 font-medium">Home</a>
+                    <a href="#about" class="px-4 py-3 hover:bg-blue-800 font-medium">About</a>
+                    <a href="#academics" class="px-4 py-3 hover:bg-blue-800 font-medium">Academics</a>
+                    <a href="#admissions" class="px-4 py-3 hover:bg-blue-800 font-medium">Admissions</a>
+                    <a href="#research" class="px-4 py-3 hover:bg-blue-800 font-medium">Research</a>
+                    <a href="#students" class="px-4 py-3 hover:bg-blue-800 font-medium">Students</a>
+                    <a href="#contact" class="px-4 py-3 hover:bg-blue-800 font-medium">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="p-3 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-4 py-2 rounded">
+                        <i class="fas fa-user-graduate mr-2"></i>Student Portal
+                    </a>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-blue-800">
+                <a href="#home" class="block px-4 py-2 hover:bg-blue-700">Home</a>
+                <a href="#about" class="block px-4 py-2 hover:bg-blue-700">About</a>
+                <a href="#academics" class="block px-4 py-2 hover:bg-blue-700">Academics</a>
+                <a href="#admissions" class="block px-4 py-2 hover:bg-blue-700">Admissions</a>
+                <a href="#research" class="block px-4 py-2 hover:bg-blue-700">Research</a>
+                <a href="#students" class="block px-4 py-2 hover:bg-blue-700">Students</a>
+                <a href="#contact" class="block px-4 py-2 hover:bg-blue-700">Contact</a>
+                <a href="#" class="block px-4 py-2 bg-yellow-500 text-blue-900 font-bold">
+                    <i class="fas fa-user-graduate mr-2"></i>Student Portal
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Excellence in Science and Technology</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">JOOUST is committed to providing quality education, research and innovation for sustainable development</p>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-8 py-3 rounded-lg text-lg">
+                    Apply Now
+                </a>
+                <a href="#" class="bg-transparent hover:bg-blue-800 border-2 border-white text-white font-bold px-8 py-3 rounded-lg text-lg">
+                    Explore Programs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section id="home" class="bg-gray-100 py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="#" class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex items-center">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-book text-blue-800 text-xl"></i>
+                    </div>
+                    <span class="font-medium">Academic Programs</span>
+                </a>
+                <a href="#" class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex items-center">
+                    <div class="bg-green-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-calendar-alt text-green-800 text-xl"></i>
+                    </div>
+                    <span class="font-medium">Academic Calendar</span>
+                </a>
+                <a href="#" class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex items-center">
+                    <div class="bg-purple-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-graduation-cap text-purple-800 text-xl"></i>
+                    </div>
+                    <span class="font-medium">Student Portal</span>
+                </a>
+                <a href="#" class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex items-center">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-newspaper text-red-800 text-xl"></i>
+                    </div>
+                    <span class="font-medium">News & Events</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">About JOOUST</h2>
+                    <p class="text-gray-700 mb-4">
+                        Jaramogi Oginga Odinga University of Science and Technology (JOOUST) is a premier institution of higher learning in Kenya, dedicated to excellence in teaching, research, and community service.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Established in 2013, the university has grown to become a center of academic excellence with state-of-the-art facilities and a vibrant student community. Our programs are designed to meet the needs of the 21st century job market.
+                    </p>
+                    <a href="#" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="JOOUST Campus" class="w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="academics" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Academic Programs</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We offer a wide range of undergraduate, postgraduate and diploma programs across various disciplines</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="bg-blue-800 p-4 text-white">
+                        <h3 class="text-xl font-bold">School of Science</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>BSc Computer Science</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>BSc Mathematics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>BSc Physics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>BSc Chemistry</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="mt-6 inline-block text-blue-800 hover:text-blue-600 font-medium">
+                            View All Programs <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Program 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="bg-green-700 p-4 text-white">
+                        <h3 class="text-xl font-bold">School of Agriculture</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>BSc Agriculture</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>BSc Agribusiness</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>BSc Food Science</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>BSc Horticulture</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="mt-6 inline-block text-green-700 hover:text-green-600 font-medium">
+                            View All Programs <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Program 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="bg-purple-800 p-4 text-white">
+                        <h3 class="text-xl font-bold">School of Business</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>BSc Business Administration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>BSc Economics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>BSc Accounting</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>BSc Finance</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="mt-6 inline-block text-purple-800 hover:text-purple-600 font-medium">
+                            View All Programs <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold px-8 py-3 rounded-lg">
+                    Explore All Programs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events -->
+    <section id="research" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">News & Events</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Stay updated with the latest happenings at JOOUST</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- News 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden news-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="News" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span><i class="far fa-calendar-alt mr-1"></i> 15 Oct 2023</span>
+                            <span class="mx-2">|</span>
+                            <span><i class="far fa-clock mr-1"></i> 3 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">JOOUST Launches New Research Center</h3>
+                        <p class="text-gray-600 mb-4">The university has established a state-of-the-art research center focusing on sustainable agriculture and climate change mitigation.</p>
+                        <a href="#" class="text-blue-800 hover:text-blue-600 font-medium">
+                            Read More <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- News 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden news-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="News" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span><i class="far fa-calendar-alt mr-1"></i> 10 Oct 2023</span>
+                            <span class="mx-2">|</span>
+                            <span><i class="far fa-clock mr-1"></i> 5 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Annual Career Fair Attracts Top Employers</h3>
+                        <p class="text-gray-600 mb-4">Over 50 companies participated in this year's career fair, offering internship and employment opportunities to our students.</p>
+                        <a href="#" class="text-blue-800 hover:text-blue-600 font-medium">
+                            Read More <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- News 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden news-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="News" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span><i class="far fa-calendar-alt mr-1"></i> 5 Oct 2023</span>
+                            <span class="mx-2">|</span>
+                            <span><i class="far fa-clock mr-1"></i> 4 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Student Innovation Wins National Award</h3>
+                        <p class="text-gray-600 mb-4">A team of Computer Science students developed an AI-powered solution for early detection of crop diseases, winning the national innovation challenge.</p>
+                        <a href="#" class="text-blue-800 hover:text-blue-600 font-medium">
+                            Read More <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold px-8 py-3 rounded-lg">
+                    View All News & Events
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="students" class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2">8,000+</div>
+                    <div class="text-lg">Students</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2">300+</div>
+                    <div class="text-lg">Academic Staff</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2">50+</div>
+                    <div class="text-lg">Academic Programs</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2">15+</div>
+                    <div class="text-lg">Research Centers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="students" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">What Our Students Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Hear from our students about their experiences at JOOUST</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-500 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">"JOOUST provided me with not just academic knowledge but also practical skills that have been invaluable in my career. The supportive faculty and excellent facilities made my learning experience exceptional."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah Achieng</h4>
+                            <p class="text-gray-600 text-sm">BSc Computer Science, Class of 2022</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-500 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">"The hands-on approach to learning at JOOUST gave me the confidence to start my own agribusiness right after graduation. The mentorship from professors was truly transformative."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">James Otieno</h4>
+                            <p class="text-gray-600 text-sm">BSc Agriculture, Class of 2021</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-500 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">"As an international student, I found JOOUST to be very welcoming. The diverse student community and quality education have prepared me well for global opportunities in business."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Amina Mohammed</h4>
+                            <p class="text-gray-600 text-sm">BSc Business Administration, Class of 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="" class="py-16 bg-blue-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Journey at JOOUST?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Join our vibrant community of scholars and innovators shaping the future of science and technology.</p>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <a href="#" class="bg-white hover:bg-gray-100 text-blue-900 font-bold px-8 py-3 rounded-lg text-lg">
+                    Apply Now
+                </a>
+                <a href="#" class="bg-transparent hover:bg-blue-700 border-2 border-white text-white font-bold px-8 py-3 rounded-lg text-lg">
+                    Contact Admissions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">About JOOUST</h3>
+                    <p class="text-gray-400 mb-4">Jaramogi Oginga Odinga University of Science and Technology is committed to excellence in teaching, research, and community service.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#academics" class="text-gray-400 hover:text-white">Academic Programs</a></li>
+                        <li><a href="#admissions" class="text-gray-400 hover:text-white">Admissions</a></li>
+                        <li><a href="#research" class="text-gray-400 hover:text-white">Research</a></li>
+                        <li><a href="#students" class="text-gray-400 hover:text-white">Student Life</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-400"></i>
+                            <span class="text-gray-400">Main Campus, Bondo, Kenya</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-blue-400"></i>
+                            <span class="text-gray-400">+254 123 456 789</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-blue-400"></i>
+                            <span class="text-gray-400">info@jooust.ac.ke</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter to receive updates on news and events.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l focus:outline-none text-gray-900">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">© 2023 Jaramogi Oginga Odinga University of Science and Technology. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Simple image slider for hero section (conceptual)
+        let currentSlide = 0;
+        const slides = [
+            "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+            "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+            "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+        ];
+
+        function changeSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            document.querySelector('.hero-bg').style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('${slides[currentSlide]}')`;
+        }
+
+        // Change slide every 5 seconds
+        setInterval(changeSlide, 5000);
+    </script>
+</body>
+</html>
