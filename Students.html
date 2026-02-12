@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOOUST | Student Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --secondary-gold: #C5A059;
+            --light-bg: #f4f7f6;
+            --text-dark: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), url('https://images.unsplash.com/photo-1523495974810-4af36c995fe5?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--secondary-gold);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            border-left: 5px solid var(--secondary-gold);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .content-section h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .content-section p {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        /* Grid Layout */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .icon {
+            font-size: 2rem;
+            color: var(--secondary-gold);
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background-color: var(--secondary-gold);
+            color: var(--primary-blue);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #a98236;
+        }
+
+        .highlights {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .highlights ul {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        .highlights li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .highlights li:before {
+            content: "→";
+            color: var(--secondary-gold);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 40px 5%;
+            margin-top: 50px;
+        }
+
+        footer h4 {
+            margin-bottom: 15px;
+            color: var(--secondary-gold);
+        }
+
+        footer p {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid-3,
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">JOOUST</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Academics.html">Academics</a></li>
+            <li><a href="Admissions.html">Admissions</a></li>
+            <li><a href="Research.html">Research</a></li>
+            <li><a href="Students.html">Students</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Student Resources</h1>
+        <p>Support Services for Your Success</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2 class="section-title">Student Support Services</h2>
+
+        <div class="content-section">
+            <h3>Welcome to Your Student Journey</h3>
+            <p>At JOOUST, we're committed to supporting your academic and personal development. Our comprehensive student services ensure you have the resources you need to succeed.</p>
+        </div>
+
+        <h3 style="color: var(--primary-blue); margin-top: 40px; margin-bottom: 20px;">Key Student Services</h3>
+
+        <div class="grid-3">
+            <div class="card">
+                <i class="fas fa-book icon"></i>
+                <h4>Academic Support</h4>
+                <p>Tutoring services, writing centers, and academic coaching to help you excel in your studies.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-heart icon"></i>
+                <h4>Health & Wellness</h4>
+                <p>Campus health services, counseling, and recreational facilities for your well-being.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-briefcase icon"></i>
+                <h4>Career Services</h4>
+                <p>Job placement, internship opportunities, and professional development workshops.</p>
+            </div>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <i class="fas fa-laptop icon"></i>
+                <h4>Technology Support</h4>
+                <p>IT help desk, computer labs, and technology training for all students.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-users icon"></i>
+                <h4>Student Life</h4>
+                <p>Clubs, societies, and campus activities for a vibrant student community.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-home icon"></i>
+                <h4>Housing Services</h4>
+                <p>On-campus accommodation options and residential life support.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>Important Student Portals</h3>
+            <div class="highlights">
+                <ul>
+                    <li>E-Learning Portal - Access course materials and submit assignments</li>
+                    <li>Student Email - Official university communication channel</li>
+                    <li>Library Resources - Access thousands of academic journals and books</li>
+                    <li>Student Portal - Register for courses and check grades</li>
+                    <li>Campus WiFi - Available in all academic buildings</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="content-section">
+                <h3>Financial Information</h3>
+                <p><strong>Tuition Payment:</strong> Payments can be made through the student portal or in person at the Finance Office.</p>
+                <p><strong>Financial Aid:</strong> Various grant and loan programs are available for eligible students.</p>
+                <p><strong>Scholarships:</strong> Merit and need-based scholarships are offered each academic year.</p>
+                <p><strong>Payment Plans:</strong> Flexible payment plans available for tuition.</p>
+            </div>
+
+            <div class="content-section">
+                <h3>Important Dates</h3>
+                <p><strong>Semester Dates:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 15px;">
+                    <li>Semester 1: September - December</li>
+                    <li>Semester 2: January - April</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Registration:</strong> Open 2 weeks before semester begins</p>
+                <p><strong>Add/Drop Period:</strong> 2 weeks from semester start</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>Student Rights & Responsibilities</h3>
+            <p>As a JOOUST student, you have rights and responsibilities within our academic community:</p>
+            <div style="margin-top: 20px;">
+                <h4 style="color: var(--primary-blue); margin-bottom: 10px;">Your Rights:</h4>
+                <div class="highlights">
+                    <ul>
+                        <li>Access to quality education and academic resources</li>
+                        <li>Fair treatment and non-discrimination</li>
+                        <li>Privacy and confidentiality of your records</li>
+                        <li>Due process in disciplinary proceedings</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 20px;">
+                <h4 style="color: var(--primary-blue); margin-bottom: 10px;">Your Responsibilities:</h4>
+                <div class="highlights">
+                    <ul>
+                        <li>Maintain academic integrity and honesty</li>
+                        <li>Follow campus policies and regulations</li>
+                        <li>Respect the rights of others</li>
+                        <li>Contribute positively to the campus community</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>Questions? We're Here to Help!</h3>
+            <p>Have questions about student services? Contact the Student Services Office:</p>
+            <p><strong>Email:</strong> studentservices@jooust.ac.ke</p>
+            <p><strong>Phone:</strong> +254 (0) 59 30866</p>
+            <p><strong>Office Hours:</strong> Monday - Friday, 8:00 AM - 5:00 PM</p>
+            <a href="Contact.html" class="btn">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>About JOOUST</h4>
+                <p>JOOUST is a leading institution of higher learning in Science and Technology in East Africa.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <p><a href="index.html" style="color: var(--white); text-decoration: none;">Home</a></p>
+                <p><a href="Academics.html" style="color: var(--white); text-decoration: none;">Academics</a></p>
+                <p><a href="Research.html" style="color: var(--white); text-decoration: none;">Research</a></p>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p>Main Campus, Bondo</p>
+                <p>P.O. Box 210 - 40601</p>
+                <p>Email: students@jooust.ac.ke</p>
+            </div>
+        </div>
+        <hr style="border: 0.5px solid #555; margin-bottom: 15px;">
+        <p>&copy; 2026 JOOUST. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
