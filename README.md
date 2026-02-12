@@ -69,7 +69,7 @@ School-website/
 
 ## Contact
 
-For website issues or suggestions, please contact webmaster@jooust.ac.ke
+For website issues or suggestions, please contact odhiambodon123@gmail.com
 
 ---
 
