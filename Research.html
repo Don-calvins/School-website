@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOOUST | Research</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --secondary-gold: #C5A059;
+            --light-bg: #f4f7f6;
+            --text-dark: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), url('https://images.unsplash.com/photo-1532088503272-0f5e4b9a0f14?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--secondary-gold);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            border-left: 5px solid var(--secondary-gold);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .content-section h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .content-section p {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .research-card {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--secondary-gold);
+            border-radius: 3px;
+        }
+
+        .research-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        /* Grid Layout */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            color: var(--secondary-gold);
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            font-size: 1rem;
+        }
+
+        .btn {
+            background-color: var(--secondary-gold);
+            color: var(--primary-blue);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #a98236;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 40px 5%;
+            margin-top: 50px;
+        }
+
+        footer h4 {
+            margin-bottom: 15px;
+            color: var(--secondary-gold);
+        }
+
+        footer p {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid-3,
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">JOOUST</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Academics.html">Academics</a></li>
+            <li><a href="Admissions.html">Admissions</a></li>
+            <li><a href="Research.html">Research</a></li>
+            <li><a href="Students.html">Students</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Research & Innovation</h1>
+        <p>Advancing Knowledge for a Better Tomorrow</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2 class="section-title">Research Excellence at JOOUST</h2>
+
+        <div class="grid-3">
+            <div class="stat-card">
+                <h3>250+</h3>
+                <p>Active Research Projects</p>
+            </div>
+            <div class="stat-card">
+                <h3>$15M+</h3>
+                <p>Annual Research Funding</p>
+            </div>
+            <div class="stat-card">
+                <h3>500+</h3>
+                <p>Publications Annually</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>Our Research Vision</h3>
+            <p>JOOUST is committed to conducting cutting-edge research that addresses critical challenges in science and technology. Our research initiatives span multiple disciplines and contribute significantly to regional and global knowledge advancement.</p>
+            <p>We partner with leading institutions worldwide to foster collaborative research and innovation.</p>
+        </div>
+
+        <h3 style="color: var(--primary-blue); margin-top: 40px; margin-bottom: 20px;">Key Research Centers</h3>
+        
+        <div class="research-card">
+            <h4>INSEFOODS - Insect Science, Engineering and Food Security</h4>
+            <p>Developing sustainable food sources through insect farming and processing technology. Our research focuses on nutritional security and environmental sustainability in East Africa.</p>
+        </div>
+
+        <div class="research-card">
+            <h4>Blue Economy Directorate</h4>
+            <p>Promoting sustainable use of marine and water resources for economic growth. Our research contributes to fisheries management, aquaculture development, and ocean conservation.</p>
+        </div>
+
+        <div class="research-card">
+            <h4>Institute of Technology Innovation</h4>
+            <p>Fostering innovation in biotechnology, engineering, and information technology. This center bridges academic research with industrial applications.</p>
+        </div>
+
+        <div class="research-card">
+            <h4>Environmental Science Research Unit</h4>
+            <p>Conducting research on climate change, renewable energy, and sustainable development. Our initiatives support the UN Sustainable Development Goals.</p>
+        </div>
+
+        <div class="content-section">
+            <h3>Research Opportunities</h3>
+            <p>We offer opportunities for students, researchers, and international collaborators to participate in our research initiatives:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li>Graduate research programs and scholarships</li>
+                <li>Postdoctoral fellowships</li>
+                <li>International collaborative research projects</li>
+                <li>Summer research internships</li>
+                <li>Industry-sponsored research partnerships</li>
+            </ul>
+        </div>
+
+        <div class="grid-2">
+            <div class="content-section">
+                <h3>Research Funding</h3>
+                <p>We actively seek research funding from multiple sources including:</p>
+                <ul style="margin-left: 20px; margin-top: 15px;">
+                    <li>Government research grants</li>
+                    <li>International development agencies</li>
+                    <li>Private foundations</li>
+                    <li>Industry partnerships</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h3>Publications & Impact</h3>
+                <p>Our research outputs include:</p>
+                <ul style="margin-left: 20px; margin-top: 15px;">
+                    <li>Peer-reviewed journal articles</li>
+                    <li>Conference presentations</li>
+                    <li>Research reports and white papers</li>
+                    <li>Innovation patents and prototypes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>Get Involved in Research</h3>
+            <p>If you're interested in joining our research community, please contact the Research Office or your departmental head.</p>
+            <a href="Contact.html" class="btn">Contact Research Office</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>About JOOUST</h4>
+                <p>JOOUST is a leading institution of higher learning in Science and Technology in East Africa.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <p><a href="index.html" style="color: var(--white); text-decoration: none;">Home</a></p>
+                <p><a href="Academics.html" style="color: var(--white); text-decoration: none;">Academics</a></p>
+                <p><a href="Admissions.html" style="color: var(--white); text-decoration: none;">Admissions</a></p>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p>Main Campus, Bondo</p>
+                <p>P.O. Box 210 - 40601</p>
+                <p>Email: research@jooust.ac.ke</p>
+            </div>
+        </div>
+        <hr style="border: 0.5px solid #555; margin-bottom: 15px;">
+        <p>&copy; 2026 JOOUST. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
